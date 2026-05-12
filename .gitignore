@@ -1,0 +1,19 @@
+# Binaries
+atui
+atui.exe
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Go files
+vendor/
+*.test
+*.out
+
+# Configuration (though they are usually in ~/.config, just in case)
+config.json
+
+# IDEs
+.vscode/
+.idea/
