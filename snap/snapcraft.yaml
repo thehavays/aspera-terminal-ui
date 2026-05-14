@@ -1,6 +1,6 @@
 name: aspera-terminal-ui
 base: core22
-version: '1.0.0'
+version: '1.0.1'
 title: Aspera Terminal UI
 icon: snap/gui/icon.png
 summary: Aspera Terminal UI for P2P and MySpace file transfers
