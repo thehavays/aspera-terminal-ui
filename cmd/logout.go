@@ -25,6 +25,10 @@ var logoutCmd = &cobra.Command{
 		cfg.ExpiresAt = ""
 		cfg.RefreshExpAt = ""
 
+		if cfg.Username != "" {
+			_ = config.DeletePassword(cfg.Username)
+		}
+
 		if err := config.SaveConfig(cfg); err != nil {
 			fmt.Printf("Failed to clear config: %v\n", err)
 			os.Exit(1)

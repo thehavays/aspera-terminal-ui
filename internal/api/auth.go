@@ -102,8 +102,11 @@ func EnsureValidToken() (string, error) {
 	}
 
 	// 2. If refresh failed or not possible, try password re-login
-	if tResp == nil && cfg.Username != "" && cfg.Password != "" {
-		tResp, _ = FetchToken(cfg.Endpoint, cfg.Username, cfg.Password, cfg.ClientID, cfg.ClientSecret)
+	if tResp == nil && cfg.Username != "" {
+		password, err := config.GetPassword(cfg.Username)
+		if err == nil && password != "" {
+			tResp, _ = FetchToken(cfg.Endpoint, cfg.Username, password, cfg.ClientID, cfg.ClientSecret)
+		}
 	}
 
 	if tResp == nil {

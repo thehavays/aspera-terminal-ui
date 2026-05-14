@@ -67,7 +67,9 @@ var loginCmd = &cobra.Command{
 		}
 
 		cfg.Username = username
-		cfg.Password = password
+		if err := config.SetPassword(username, password); err != nil {
+			fmt.Printf("Warning: Failed to save password to keyring: %v\n", err)
+		}
 		cfg.AccessToken = tResp.AccessToken
 		cfg.RefreshToken = tResp.RefreshToken
 		cfg.ExpiresAt = time.Now().Add(time.Duration(tResp.ExpiresIn) * time.Second).Format(time.RFC3339)

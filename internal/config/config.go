@@ -4,7 +4,11 @@ import (
 	"encoding/json"
 	"os"
 	"path/filepath"
+
+	"github.com/zalando/go-keyring"
 )
+
+const KEYRING_SERVICE = "filegate"
 
 type Config struct {
 	AccessToken  string `json:"access_token"`
@@ -15,7 +19,6 @@ type Config struct {
 	ClientID     string `json:"client_id"`
 	ClientSecret string `json:"client_secret"`
 	Username     string `json:"username"`
-	Password     string `json:"password"`
 }
 
 func GetConfigPath() (string, error) {
@@ -63,4 +66,16 @@ func SaveConfig(cfg *Config) error {
 	}
 
 	return os.WriteFile(path, data, 0600)
+}
+
+func SetPassword(username, password string) error {
+	return keyring.Set(KEYRING_SERVICE, username, password)
+}
+
+func GetPassword(username string) (string, error) {
+	return keyring.Get(KEYRING_SERVICE, username)
+}
+
+func DeletePassword(username string) error {
+	return keyring.Delete(KEYRING_SERVICE, username)
 }
