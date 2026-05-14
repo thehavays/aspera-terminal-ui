@@ -1,6 +1,6 @@
 name: aspera-terminal-ui
 base: core22
-version: '1.0.2'
+version: '1.0.3'
 title: Aspera Terminal UI
 icon: snap/gui/icon.png
 summary: Aspera Terminal UI for P2P and MySpace file transfers
@@ -8,6 +8,12 @@ description: |
   atui is a powerful command-line interface for managing Aspera file transfers.
   It allows users to list, download, and share files across Aspera P2P and MySpace systems
   with a rich interactive terminal UI.
+
+license: MIT
+contact: https://github.com/thehavays/aspera-terminal-ui/issues
+issues: https://github.com/thehavays/aspera-terminal-ui/issues
+source-code: https://github.com/thehavays/aspera-terminal-ui
+website: https://github.com/thehavays/aspera-terminal-ui
 
 grade: stable
 confinement: strict
@@ -32,3 +38,8 @@ parts:
       - pkg-config
     stage-packages:
       - libsecret-1-0
+    override-build: |
+      snapcraftctl build
+      if [ -f $SNAPCRAFT_PART_INSTALL/bin/aspera-terminal-ui ]; then
+        mv $SNAPCRAFT_PART_INSTALL/bin/aspera-terminal-ui $SNAPCRAFT_PART_INSTALL/bin/atui
+      fi
