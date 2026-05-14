@@ -1,4 +1,4 @@
-name: atui
+name: aspera-terminal-ui
 base: core22
 version: '1.0.0'
 title: Aspera Terminal UI
