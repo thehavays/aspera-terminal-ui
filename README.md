@@ -16,6 +16,16 @@ A powerful, interactive terminal user interface for Aspera P2P/MySpace systems. 
 - Go 1.26 or higher (for building from source)
 - Linux (currently optimized for Linux environments)
 
+### Install via Snap (Linux)
+The easiest way to install `atui` on any Linux distribution is via the Snap Store:
+```bash
+sudo snap install aspera-terminal-ui
+```
+After installation, you must connect the `password-manager-service` plug to allow the application to store your credentials securely in the system keyring:
+```bash
+sudo snap connect aspera-terminal-ui:password-manager-service
+```
+
 ### Building from Source
 ```bash
 go build -o atui
