@@ -1,6 +1,8 @@
 name: atui
 base: core22
 version: '1.0.0'
+title: Aspera Terminal UI
+icon: snap/gui/icon.png
 summary: Aspera Terminal UI for P2P and MySpace file transfers
 description: |
   atui is a powerful command-line interface for managing Aspera file transfers.
