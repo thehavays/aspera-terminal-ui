@@ -1,6 +1,6 @@
 name: aspera-terminal-ui
 base: core22
-version: '1.0.1'
+version: '1.0.2'
 title: Aspera Terminal UI
 icon: snap/gui/icon.png
 summary: Aspera Terminal UI for P2P and MySpace file transfers
@@ -25,6 +25,8 @@ parts:
   atui:
     plugin: go
     source: .
+    build-snaps:
+      - go
     build-packages:
       - libsecret-1-dev
       - pkg-config
