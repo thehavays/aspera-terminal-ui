@@ -1,0 +1,30 @@
+name: atui
+base: core22
+version: '1.0.0'
+summary: Aspera Terminal UI for P2P and MySpace file transfers
+description: |
+  atui is a powerful command-line interface for managing Aspera file transfers.
+  It allows users to list, download, and share files across Aspera P2P and MySpace systems
+  with a rich interactive terminal UI.
+
+grade: stable
+confinement: strict
+
+apps:
+  atui:
+    command: bin/atui
+    plugs:
+      - network
+      - network-bind
+      - home
+      - password-manager-service
+
+parts:
+  atui:
+    plugin: go
+    source: .
+    build-packages:
+      - libsecret-1-dev
+      - pkg-config
+    stage-packages:
+      - libsecret-1-0
