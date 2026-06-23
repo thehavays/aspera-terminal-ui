@@ -26,7 +26,7 @@ func GetConfigPath() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	dir := filepath.Join(configDir, "atui")
+	dir := filepath.Join(configDir, "aspera-terminal-ui")
 	if err := os.MkdirAll(dir, 0700); err != nil {
 		return "", err
 	}

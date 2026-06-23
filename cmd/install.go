@@ -36,8 +36,8 @@ func setupCompletion() {
 		file string
 		cmd  string
 	}{
-		{"bash", ".bashrc", "source <(atui completion bash)"},
-		{"zsh", ".zshrc", "source <(atui completion zsh)"},
+		{"bash", ".bashrc", "source <(aspera-terminal-ui completion bash)"},
+		{"zsh", ".zshrc", "source <(aspera-terminal-ui completion zsh)"},
 	}
 
 	for _, s := range shells {
@@ -61,7 +61,7 @@ func setupCompletion() {
 			continue
 		}
 
-		fmt.Fprintf(f, "\n# Aspera Terminal UI (atui) completion\n%s\n", s.cmd)
+		fmt.Fprintf(f, "\n# Aspera Terminal UI (aspera-terminal-ui) completion\n%s\n", s.cmd)
 		f.Close()
 		fmt.Printf("Shell completion added to %s\n", s.file)
 	}

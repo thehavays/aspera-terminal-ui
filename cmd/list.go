@@ -17,7 +17,7 @@ var listCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		cfg, err := config.LoadConfig()
 		if err != nil || cfg.AccessToken == "" {
-			fmt.Println("Not logged in. Please run 'atui login' first.")
+			fmt.Println("Not logged in. Please run 'aspera-terminal-ui login' first.")
 			os.Exit(1)
 		}
 

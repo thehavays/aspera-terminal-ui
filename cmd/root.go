@@ -8,18 +8,18 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "atui",
+	Use:   "aspera-terminal-ui",
 	Short: "Aspera Terminal UI",
-	Long: `atui is a command line client for Aspera P2P/MySpace systems.
+	Long: `aspera-terminal-ui is a command line client for Aspera P2P/MySpace systems.
 	
 To enable shell completion, run:
-  atui completion [bash|zsh|fish|powershell]
+  aspera-terminal-ui completion [bash|zsh|fish|powershell]
   
 Example for bash:
-  source <(atui completion bash)
+  source <(aspera-terminal-ui completion bash)
   
 To see help for any command:
-  atui [command] --help`,
+  aspera-terminal-ui [command] --help`,
 }
 
 func Execute() {

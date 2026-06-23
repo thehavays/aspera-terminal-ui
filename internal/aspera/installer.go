@@ -17,25 +17,25 @@ var ascpKey []byte
 var ascpLicense []byte
 
 // GetAscpPaths ensures that the embedded ascp binary and ssh key are present
-// in the ~/.atui/bin directory and returns their absolute paths.
+// in the ~/.aspera-terminal-ui/bin directory and returns their absolute paths.
 func GetAscpPaths() (string, string, error) {
 	configDir, err := os.UserConfigDir()
 	if err != nil {
 		return "", "", err
 	}
 
-	atuiBinDir := filepath.Join(configDir, "atui", "bin")
-	atuiEtcDir := filepath.Join(configDir, "atui", "etc")
-	if err := os.MkdirAll(atuiBinDir, 0755); err != nil {
-		return "", "", fmt.Errorf("failed to create atui bin directory: %w", err)
+	binDir := filepath.Join(configDir, "aspera-terminal-ui", "bin")
+	etcDir := filepath.Join(configDir, "aspera-terminal-ui", "etc")
+	if err := os.MkdirAll(binDir, 0755); err != nil {
+		return "", "", fmt.Errorf("failed to create aspera-terminal-ui bin directory: %w", err)
 	}
-	if err := os.MkdirAll(atuiEtcDir, 0755); err != nil {
-		return "", "", fmt.Errorf("failed to create atui etc directory: %w", err)
+	if err := os.MkdirAll(etcDir, 0755); err != nil {
+		return "", "", fmt.Errorf("failed to create aspera-terminal-ui etc directory: %w", err)
 	}
 
-	ascpPath := filepath.Join(atuiBinDir, "ascp")
-	keyPath := filepath.Join(atuiEtcDir, "asperaweb_id_dsa.openssh")
-	licensePath := filepath.Join(atuiEtcDir, "aspera-license")
+	ascpPath := filepath.Join(binDir, "ascp")
+	keyPath := filepath.Join(etcDir, "asperaweb_id_dsa.openssh")
+	licensePath := filepath.Join(etcDir, "aspera-license")
 
 	// Check if ascp is already extracted and has the right size/permissions
 	// For simplicity, we check if they exist. We could also check hash if needed.
