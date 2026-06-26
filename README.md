@@ -64,6 +64,12 @@ You can download files interactively or by providing a Request ID:
 ./aspera-terminal-ui download REQ123456789
 ```
 
+**Specify Download Path:**
+By default, files are downloaded to a new folder named after the request ID in your current working directory. You can specify a different base destination directory using the `--path` or `-p` option:
+```bash
+./aspera-terminal-ui download REQ123456789 --path /path/to/directory
+```
+
 ### 4. Share Files
 ```bash
 ./aspera-terminal-ui share --to user@example.com --subject "Important Files" /path/to/file1 /path/to/file2
