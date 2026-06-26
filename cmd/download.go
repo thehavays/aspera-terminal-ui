@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	destDir string
+	pathDir  string
 	allFiles bool
 )
 
@@ -85,7 +85,7 @@ var downloadCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		targetDir := destDir
+		targetDir := pathDir
 		if targetDir == "" {
 			var err error
 			targetDir, err = os.Getwd()
@@ -149,6 +149,6 @@ var downloadCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(downloadCmd)
-	downloadCmd.Flags().StringVarP(&destDir, "dest", "d", "", "Destination directory for downloaded files (default: current directory)")
+	downloadCmd.Flags().StringVarP(&pathDir, "path", "p", "", "Destination directory for downloaded files (default: current directory)")
 	downloadCmd.Flags().BoolVarP(&allFiles, "all", "a", false, "Download all files without asking")
 }
