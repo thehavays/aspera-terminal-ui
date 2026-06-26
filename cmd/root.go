@@ -10,7 +10,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:     "aspera-terminal-ui",
 	Short:   "Aspera Terminal UI",
-	Version: "1.0.8",
+	Version: "1.0.9",
 	Long: `aspera-terminal-ui is a command line client for Aspera P2P/MySpace systems.
 	
 To enable shell completion, run:

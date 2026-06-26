@@ -1,6 +1,6 @@
 # Binaries
-aspera-terminal-ui
-aspera-terminal-ui.exe
+/aspera-terminal-ui
+/aspera-terminal-ui.exe
 
 # OS files
 .DS_Store
