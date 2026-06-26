@@ -67,6 +67,7 @@ var downloadCmd = &cobra.Command{
 			}
 		} else {
 			reqID = args[0]
+			allFiles = true
 		}
 
 		// Interactive File Selection (if not --all)
