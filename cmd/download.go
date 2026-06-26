@@ -80,6 +80,11 @@ var downloadCmd = &cobra.Command{
 			}
 		}
 
+		if strings.Contains(reqID, "..") || strings.ContainsAny(reqID, "/\\") {
+			fmt.Println("Error: Invalid Request ID.")
+			os.Exit(1)
+		}
+
 		targetDir := destDir
 		if targetDir == "" {
 			var err error
@@ -89,6 +94,8 @@ var downloadCmd = &cobra.Command{
 				os.Exit(1)
 			}
 		}
+
+		targetDir = filepath.Join(targetDir, reqID)
 
 		absTargetDir, err := filepath.Abs(targetDir)
 		if err != nil {
