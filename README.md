@@ -93,5 +93,18 @@ source ~/.zshrc
 ## Configuration
 Configuration is stored in `~/.config/aspera-terminal-ui/config.json`.
 
+## Antigravity AI Agent Integration
+This repository includes a workspace-scoped AI agent skill definition that helps LLM coding assistants like Antigravity understand how to build, run, and execute the `aspera-terminal-ui` command line interface.
+
+The configuration is located at:
+* [.agents/skills/aspera-terminal-ui/SKILL.md](.agents/skills/aspera-terminal-ui/SKILL.md)
+
+When working in this workspace, Antigravity will automatically detect and load this skill, allowing the agent to assist with CLI tasks directly.
+
+To load this skill globally so that Antigravity can understand and run this CLI in any directory/workspace on your system, copy the skill to your global customizations root:
+```bash
+mkdir -p ~/.gemini/config/skills/aspera-terminal-ui && cp .agents/skills/aspera-terminal-ui/SKILL.md ~/.gemini/config/skills/aspera-terminal-ui/SKILL.md
+```
+
 ## License
 MIT
