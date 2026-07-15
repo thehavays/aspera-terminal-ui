@@ -67,9 +67,9 @@ var loginCmd = &cobra.Command{
 		}
 
 		cfg.Username = username
-		if err := config.SetPassword(username, password); err != nil {
-			fmt.Printf("Warning: Failed to save password to keyring: %v\n", err)
-		}
+		// Silently ignore if we can't save password to keyring (e.g. headless/SSH environments)
+		// Auto-relogin will be disabled, but session refresh will still work if possible.
+		_ = config.SetPassword(username, password)
 		cfg.AccessToken = tResp.AccessToken
 		cfg.RefreshToken = tResp.RefreshToken
 		cfg.ExpiresAt = time.Now().Add(time.Duration(tResp.ExpiresIn) * time.Second).Format(time.RFC3339)
