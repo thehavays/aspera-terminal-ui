@@ -1,14 +1,35 @@
+<p align="center">
+  <img src="snap/gui/icon.png" width="128" alt="Aspera Terminal UI Logo">
+</p>
+
+<p align="center">
+  <a href="https://snapcraft.io/aspera-terminal-ui">
+    <img src="https://snapcraft.io/aspera-terminal-ui/badge.svg" alt="aspera-terminal-ui">
+  </a>
+  <img src="https://img.shields.io/github/v/tag/thehavays/aspera-terminal-ui?label=version" alt="version">
+  <img src="https://img.shields.io/github/license/thehavays/aspera-terminal-ui" alt="license">
+  <img src="https://img.shields.io/github/repo-size/thehavays/aspera-terminal-ui" alt="size">
+</p>
+
+<p align="center">
+  <a href="https://snapcraft.io/aspera-terminal-ui">
+    <img src="https://snapcraft.io/en/dark/install.svg" alt="Get it from the Snap Store">
+  </a>
+</p>
+
 # Aspera Terminal UI
 
 A powerful, interactive terminal user interface for Aspera P2P/MySpace systems. `aspera-terminal-ui` simplifies the process of listing, sharing, and downloading files via Aspera without leaving your terminal.
 
 ## Features
 
-- **Interactive TUI**: Navigate through received and shared requests with a sleek, keyboard-driven interface.
-- **Smart Download**: Select specific files from a request or download everything with a single command.
-- **Dynamic Completion**: Tab-completion support for commands and Request IDs (fetches your latest requests automatically).
-- **Auto-Token Refresh**: Never worry about "Session Expired" errors. `aspera-terminal-ui` handles token renewal and re-authentication in the background.
-- **Embedded Aspera Client**: No need to manually install Aspera; `aspera-terminal-ui` can extract and set up the necessary binaries for you.
+- 🐚 **Interactive TUI**: Navigate through received and shared requests with a sleek, keyboard-driven interface.
+- 🚀 **Smart Download**: Select specific files from a request or download everything with a single command.
+- 🔄 **Share Files**: Share files and directories with other Aspera users directly from the terminal.
+- 📁 **Dynamic Completion**: Tab-completion support for commands and Request IDs (fetches your latest requests automatically).
+- 🔑 **Secure Auth**: Passwords securely stored in the system keyring.
+- ⚡ **Auto-Token Refresh**: Never worry about "Session Expired" errors. Token renewal and re-authentication happen in the background.
+- 📦 **Embedded Aspera Client**: No need to manually install Aspera; necessary binaries are extracted and set up for you.
 
 ## Installation
 
