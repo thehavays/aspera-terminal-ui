@@ -1,0 +1,21 @@
+name: ✨ Feature Request
+description: Propose a new feature, improvement, or capability for Aspera Terminal UI.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: "### Suggest a feature or improvement for Aspera Terminal UI"
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement / Context
+      description: What challenge or user need is this addressing?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution & Scope
+      description: How should this feature work?
+    validations:
+      required: true
