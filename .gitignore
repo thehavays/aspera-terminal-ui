@@ -1,18 +1,31 @@
-# Binaries
+# Binaries & Build Outputs
 /aspera-terminal-ui
 /aspera-terminal-ui.exe
+dist/
+build/
+
+# Go artifacts
+vendor/
+*.test
+*.out
+*.prof
+
+# Environment and Secrets (NEVER commit secrets!)
+.env
+.env.*
+!.env.example
+config.json
+
+# Snap build artifacts
+*.snap
+parts/
+stage/
+prime/
+.snapcraft/
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# Go files
-vendor/
-*.test
-*.out
-
-# Configuration (though they are usually in ~/.config, just in case)
-config.json
 
 # IDEs
 .vscode/
